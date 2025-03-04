@@ -6,6 +6,7 @@ using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Interface;
 
+
 namespace HelloGreetingApplication.Controllers
 {
     
@@ -90,6 +91,17 @@ namespace HelloGreetingApplication.Controllers
         {
             return _greetingBL.GetGreet();
 
+        }
+        [HttpPost]
+        [Route("PostGreet")]
+        public IActionResult PostGreeting(UserModel userModel)
+        {
+            var result = _greetingBL.greeting(userModel);
+            ResponseModel<string> responseModel = new ResponseModel<string>();
+            responseModel.Success = true;
+            responseModel.Message = "Greeting Message initiated With Name";
+            responseModel.Data = result;
+            return Ok(responseModel);
         }
     }
 }

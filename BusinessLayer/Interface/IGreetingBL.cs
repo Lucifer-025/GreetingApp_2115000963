@@ -10,5 +10,8 @@ namespace BuisnessLayer.Interface
     public interface IGreetingBL
     {
         public string GetGreet();
+
+        public string greeting(UserModel userModel);
+
     }
 }
