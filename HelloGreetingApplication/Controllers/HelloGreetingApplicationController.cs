@@ -1,17 +1,30 @@
 using System.Security.Cryptography.X509Certificates;
 using BuisnessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
+using BusinessLayer.Service;
 using ModelLayer.Model;
+using NLog;
+using RepositoryLayer.Interface;
 
 namespace HelloGreetingApplication.Controllers
 {
+    
+
     /// <summary>
+    /// 
     /// 
     /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class HelloGreetingController : ControllerBase
     {
+        private readonly IGreetingBL _greetingBL;
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        public HelloGreetingController(IGreetingBL greetingBL)
+        {
+            _greetingBL = greetingBL;
+            _logger.Info("Logger Application has been started");
+        }
         [HttpGet]
         public IActionResult Get()
         {
@@ -70,6 +83,13 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = $"Key: {requestModel.Key},Deleted Successfully.";
 
             return Ok(responseModel);
+        }
+        [HttpGet]
+        [Route("GetGreeting")]
+        public string GetHello()
+        {
+            return _greetingBL.GetGreet();
+
         }
     }
 }

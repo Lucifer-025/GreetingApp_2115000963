@@ -1,6 +1,9 @@
 using NLog;
 using NLog.Web;
 using NLog.Config;
+using BuisnessLayer.Interface;
+using BusinessLayer.Service;
+using RepositoryLayer.Service;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 LogManager.Configuration = new XmlLoggingConfiguration("C:\\Users\\pc\\Desktop\\C# Programs\\HelloGreetingApplication\\Nlog.Config");
@@ -18,6 +21,8 @@ try
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+    builder.Services.AddScoped<GreetingRL, GreetingRL>();
 
     var app = builder.Build();
 

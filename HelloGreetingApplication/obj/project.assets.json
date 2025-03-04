@@ -1033,11 +1033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Important\\Project\\HelloGreetingApplication\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
+      "projectUniqueName": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
       "projectName": "HelloGreetingApplication",
-      "projectPath": "C:\\Important\\Project\\HelloGreetingApplication\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
+      "projectPath": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Important\\Project\\HelloGreetingApplication\\HelloGreetingApplication\\obj\\",
+      "outputPath": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\HelloGreetingApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1059,8 +1059,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Important\\Project\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Important\\Project\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }
