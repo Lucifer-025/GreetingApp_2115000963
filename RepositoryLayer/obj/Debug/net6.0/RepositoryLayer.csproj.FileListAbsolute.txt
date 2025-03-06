@@ -29,3 +29,5 @@ C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\obj\Deb
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.runtimeconfig.json
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.genruntimeconfig.cache

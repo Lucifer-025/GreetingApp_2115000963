@@ -28,5 +28,9 @@ namespace BusinessLayer.Service
         {
             return _greetingRL.Greeting(userModel);
         }
+        public bool GreetMessage(GreetModel greetModel)
+        {
+            return _greetingRL.GreetMessage(greetModel);
+        }
     }
 }

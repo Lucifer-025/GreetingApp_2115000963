@@ -10,7 +10,7 @@ namespace BuisnessLayer.Interface
     public interface IGreetingBL
     {
         public string GetGreet();
-
+        public bool GreetMessage(GreetModel greetModel);
         public string greeting(UserModel userModel);
 
     }

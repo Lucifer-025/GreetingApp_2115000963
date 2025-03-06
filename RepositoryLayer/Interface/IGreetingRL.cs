@@ -10,5 +10,6 @@ namespace RepositoryLayer.Interface
     public interface IGreetingRL
     {
         public string Greeting(UserModel userModel);
+        public bool GreetMessage(GreetModel greetModel);
     }
 }

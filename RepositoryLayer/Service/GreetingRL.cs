@@ -2,12 +2,34 @@
 using System;
 using ModelLayer.Model;
 using NLog;
+using Microsoft.EntityFrameworkCore;
+using  RepositoryLayer.Context;
+using RepositoryLayer.Entity;
 
 namespace RepositoryLayer.Service
 {
     public class GreetingRL : IGreetingRL
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly GreetContext _context;
+        public GreetingRL(GreetContext context)
+        {
+            _context = context;
+        }
+        public bool GreetMessage(GreetModel greetModel)
+        {
+            if (_context.GreetMessages.Any(greet => greet.Greeting == greetModel.GreetingMessage))
+            {
+                return false;
+            }
+            var greetingEntity = new GreetEntity
+            {
+                Greeting = greetModel.GreetingMessage,
+            };
+            _context.GreetMessages.Add(greetingEntity);
+            _context.SaveChanges();
+            return true;
+        }
         public string Greeting(UserModel userModel)
         {
             string greetingMessage = string.Empty;
