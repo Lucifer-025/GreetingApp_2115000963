@@ -15,6 +15,7 @@ namespace BuisnessLayer.Interface
         public string greeting(UserModel userModel);
         public List<GreetModel> GetAllGreetings();
         public GreetModel EditGreeting(int ID, GreetModel greetingModel);
+        public bool DeleteGreetingMessage(int ID);
 
     }
 }

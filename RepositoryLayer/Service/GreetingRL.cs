@@ -88,5 +88,16 @@ namespace RepositoryLayer.Service
             }
             return null; // If greeting message not found
         }
+        public bool DeleteGreetingMessage(int ID)
+        {
+            var entity = _context.GreetMessages.FirstOrDefault(g => g.id == ID);
+            if (entity != null)
+            {
+                _context.GreetMessages.Remove(entity);
+                _context.SaveChanges();
+                return true; // Successfully Deleted
+            }
+            return false; // Not Found
+        }
     }
 }
