@@ -43,6 +43,11 @@ namespace RepositoryLayer.Service
             _context.SaveChanges();
             return true;
         }
+        public List<GreetEntity> GetAllGreetings()
+        {
+            return _context.GreetMessages.ToList();  // Fetching All Data from Database
+        }
+
         public string Greeting(UserModel userModel)
         {
             string greetingMessage = string.Empty;
@@ -64,8 +69,10 @@ namespace RepositoryLayer.Service
                 greetingMessage = "Hello World";
             }
 
+
             _logger.Info($"Greeting is Generated: {greetingMessage}");
             return greetingMessage;
+
         }
     }
 }

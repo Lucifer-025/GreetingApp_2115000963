@@ -103,6 +103,37 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = result;
             return Ok(responseModel);
         }
+     
+        /// <summary>
+        /// User provides the input and it get inserted into database
+        /// </summary>
+        /// <param name="greetModel"></param>
+        /// <returns></returns>
+        [HttpPost("Greetingmessage")]
+        public IActionResult GreetMessage(GreetModel greetModel)
+        {
+            var response = new ResponseModel<string>();
+            try
+            {
+                bool isMessageGrret = _greetingBL.GreetMessage(greetModel);
+                if (isMessageGrret)
+                {
+                    response.Success = true;
+                    response.Message = "Greet Message!";
+                    response.Data = greetModel.ToString();
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Greet Message Already Exist.";
+                return Conflict(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
         [HttpGet("GetGreetingById/{ID}")]
         public IActionResult GetGreetingById(int ID)
         {
@@ -128,28 +159,24 @@ namespace HelloGreetingApplication.Controllers
                 return StatusCode(500, response);
             }
         }
-        /// <summary>
-        /// User provides the input and it get inserted into database
-        /// </summary>
-        /// <param name="greetModel"></param>
-        /// <returns></returns>
-        [HttpPost("Greetingmessage")]
-        public IActionResult GreetMessage(GreetModel greetModel)
+
+        [HttpGet("GetAllGreetings")]
+        public IActionResult GetAllGreetings()
         {
-            var response = new ResponseModel<string>();
+            ResponseModel<List<GreetModel>> response = new ResponseModel<List<GreetModel>>();
             try
             {
-                bool isMessageGrret = _greetingBL.GreetMessage(greetModel);
-                if (isMessageGrret)
+                var result = _greetingBL.GetAllGreetings();
+                if (result != null && result.Count > 0)
                 {
                     response.Success = true;
-                    response.Message = "Greet Message!";
-                    response.Data = greetModel.ToString();
+                    response.Message = "Greeting Messages Found";
+                    response.Data = result;
                     return Ok(response);
                 }
                 response.Success = false;
-                response.Message = "Greet Message Already Exist.";
-                return Conflict(response);
+                response.Message = "No Greeting Messages Found";
+                return NotFound(response);
             }
             catch (Exception ex)
             {

@@ -205,29 +205,6 @@
         }
       }
     },
-    "/HelloGreeting/GetGreetingById/{ID}": {
-      "get": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "parameters": [
-          {
-            "name": "ID",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/HelloGreeting/Greetingmessage": {
       "post": {
         "tags": [
@@ -252,6 +229,41 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/HelloGreeting/GetGreetingById/{ID}": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/HelloGreeting/GetAllGreetings": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
         "responses": {
           "200": {
             "description": "OK"

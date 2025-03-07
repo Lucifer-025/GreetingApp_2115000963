@@ -13,6 +13,7 @@ namespace BuisnessLayer.Interface
         public bool GreetMessage(GreetModel greetModel);
         public GreetModel GreetMessagebyID(int ID);
         public string greeting(UserModel userModel);
+        public List<GreetModel> GetAllGreetings();
 
     }
 }
