@@ -7,6 +7,7 @@ using RepositoryLayer.Service;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Context;
 using Microsoft.EntityFrameworkCore;
+using Middleware.ExceptionMiddleware; ;
 
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -21,7 +22,7 @@ try
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
     builder.Services.AddDbContext<GreetContext>(options =>
-options.UseMySql(builder.Configuration.GetConnectionString("MySqlDatabase"), new MySqlServerVersion(new Version(8, 0, 41))));
+    options.UseMySql(builder.Configuration.GetConnectionString("MySqlDatabase"), new MySqlServerVersion(new Version(8, 0, 41))));
 
     // Add services to the container.
     builder.Services.AddControllers();
@@ -30,13 +31,18 @@ options.UseMySql(builder.Configuration.GetConnectionString("MySqlDatabase"), new
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 
+
     var app = builder.Build();
 
-    // Configure the HTTP request pipeline.
+  
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.UseRequestLoggerMiddleware();
+        app.ConfigureExceptionMiddleware();
+
+
     }
 
     app.UseHttpsRedirection();

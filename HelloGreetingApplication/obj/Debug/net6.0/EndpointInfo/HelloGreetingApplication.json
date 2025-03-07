@@ -313,7 +313,7 @@
         }
       }
     },
-    "/HelloGreeting/DeleteGreeting/{ID}": {
+    "/HelloGreeting/DeleteGreetingMessage/{ID}": {
       "delete": {
         "tags": [
           "HelloGreeting"

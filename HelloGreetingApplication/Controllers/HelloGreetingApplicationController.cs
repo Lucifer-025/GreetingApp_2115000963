@@ -91,7 +91,11 @@ namespace HelloGreetingApplication.Controllers
         {
             return _greetingBL.GetGreet();
 
-        }
+        }/// <summary>
+        /// Used for display welcome with Name
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("PostGreet")]
         public IActionResult PostGreeting(UserModel userModel)
@@ -237,3 +241,4 @@ namespace HelloGreetingApplication.Controllers
 
     }
 }
+

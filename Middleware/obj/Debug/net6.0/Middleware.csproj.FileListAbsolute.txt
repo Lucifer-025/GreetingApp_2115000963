@@ -1,0 +1,13 @@
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\bin\Debug\net6.0\Middleware.deps.json
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\bin\Debug\net6.0\Middleware.dll
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\bin\Debug\net6.0\Middleware.pdb
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.AssemblyInfo.cs
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.sourcelink.json
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.dll
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\refint\Middleware.dll
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\Middleware.pdb
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\Middleware\obj\Debug\net6.0\ref\Middleware.dll
