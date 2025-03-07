@@ -103,6 +103,31 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = result;
             return Ok(responseModel);
         }
+        [HttpGet("GetGreetingById/{ID}")]
+        public IActionResult GetGreetingById(int ID)
+        {
+            var response = new ResponseModel<GreetModel>();
+            try
+            {
+                var result = _greetingBL.GreetMessagebyID(ID);
+                if (result != null)
+                {
+                    response.Success = true;
+                    response.Message = "Greeting Message is Found";
+                    response.Data = result;
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Greeting Message Not Found";
+                return NotFound(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
         /// <summary>
         /// User provides the input and it get inserted into database
         /// </summary>

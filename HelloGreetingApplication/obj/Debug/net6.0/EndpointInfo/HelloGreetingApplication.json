@@ -205,6 +205,29 @@
         }
       }
     },
+    "/HelloGreeting/GetGreetingById/{ID}": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/HelloGreeting/Greetingmessage": {
       "post": {
         "tags": [
@@ -242,6 +265,10 @@
       "GreetModel": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "greetingMessage": {
             "type": "string",
             "nullable": true

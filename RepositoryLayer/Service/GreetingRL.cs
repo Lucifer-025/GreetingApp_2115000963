@@ -16,6 +16,19 @@ namespace RepositoryLayer.Service
         {
             _context = context;
         }
+        public GreetModel GreetMessagebyID(int ID)
+        {
+            var entity=_context.GreetMessages.FirstOrDefault(g => g.id == ID);
+            if (entity != null)
+            {
+                return new GreetModel()
+                {
+                    ID = entity.id,
+                    GreetingMessage = entity.Greeting
+                };
+            }
+            return null;
+        }
         public bool GreetMessage(GreetModel greetModel)
         {
             if (_context.GreetMessages.Any(greet => greet.Greeting == greetModel.GreetingMessage))
