@@ -185,5 +185,30 @@ namespace HelloGreetingApplication.Controllers
                 return StatusCode(500, response);
             }
         }
+        [HttpPut("EditGreeting/{ID}")]
+        public IActionResult EditGreeting(int ID, GreetModel greetModel)
+        {
+            ResponseModel<GreetModel> response = new ResponseModel<GreetModel>();
+            try
+            {
+                var result = _greetingBL.EditGreeting(ID, greetModel);
+                if (result != null)
+                {
+                    response.Success = true;
+                    response.Message = "Greeting Message Updated Successfully";
+                    response.Data = result;
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Greeting Message Not Found";
+                return NotFound(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
     }
 }

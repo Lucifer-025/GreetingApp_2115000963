@@ -16,19 +16,7 @@ namespace RepositoryLayer.Service
         {
             _context = context;
         }
-        public GreetModel GreetMessagebyID(int ID)
-        {
-            var entity=_context.GreetMessages.FirstOrDefault(g => g.id == ID);
-            if (entity != null)
-            {
-                return new GreetModel()
-                {
-                    ID = entity.id,
-                    GreetingMessage = entity.Greeting
-                };
-            }
-            return null;
-        }
+      
         public bool GreetMessage(GreetModel greetModel)
         {
             if (_context.GreetMessages.Any(greet => greet.Greeting == greetModel.GreetingMessage))
@@ -43,10 +31,7 @@ namespace RepositoryLayer.Service
             _context.SaveChanges();
             return true;
         }
-        public List<GreetEntity> GetAllGreetings()
-        {
-            return _context.GreetMessages.ToList();  // Fetching All Data from Database
-        }
+       
 
         public string Greeting(UserModel userModel)
         {
@@ -73,6 +58,35 @@ namespace RepositoryLayer.Service
             _logger.Info($"Greeting is Generated: {greetingMessage}");
             return greetingMessage;
 
+        }
+        public GreetModel GreetMessagebyID(int ID)
+        {
+            var entity = _context.GreetMessages.FirstOrDefault(g => g.id == ID);
+            if (entity != null)
+            {
+                return new GreetModel()
+                {
+                    ID = entity.id,
+                    GreetingMessage = entity.Greeting
+                };
+            }
+            return null;
+        }
+        public List<GreetEntity> GetAllGreetings()
+        {
+            return _context.GreetMessages.ToList();  // Fetching All Data from Database
+        }
+        public GreetEntity EditGreeting(int ID, GreetModel greetingModel)
+        {
+            var entity = _context.GreetMessages.FirstOrDefault(g => g.id == ID);
+            if (entity != null)
+            {
+                entity.Greeting = greetingModel.GreetingMessage;
+                _context.GreetMessages.Update(entity);
+                _context.SaveChanges();
+                return entity; // Returning the updated Entity
+            }
+            return null; // If greeting message not found
         }
     }
 }

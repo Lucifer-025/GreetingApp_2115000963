@@ -80,6 +80,27 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "EditGreeting",
+    "RelativePath": "HelloGreeting/EditGreeting/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "greetModel",
+        "Type": "ModelLayer.Model.GreetModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "GetAllGreetings",
     "RelativePath": "HelloGreeting/GetAllGreetings",
     "HttpMethod": "GET",

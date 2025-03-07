@@ -49,5 +49,19 @@ namespace BusinessLayer.Service
             }
             return null;
         }
+        public GreetModel EditGreeting(int ID, GreetModel greetingModel)
+        {
+            var result = _greetingRL.EditGreeting(ID, greetingModel); // Calling Repository Layer
+            if (result != null)
+            {
+                return new GreetModel()
+                {
+                    ID = result.id,
+                    GreetingMessage = result.Greeting
+                };
+            }
+            return null;
+        }
+
     }
 }
