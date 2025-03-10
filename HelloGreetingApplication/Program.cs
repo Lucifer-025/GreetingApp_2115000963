@@ -1,13 +1,14 @@
 using NLog;
-using NLog.Web;
 using NLog.Config;
+using NLog.Web;
 using BuisnessLayer.Interface;
 using BusinessLayer.Service;
-using RepositoryLayer.Service;
-using RepositoryLayer.Interface;
-using RepositoryLayer.Context;
 using Microsoft.EntityFrameworkCore;
-using Middleware.ExceptionMiddleware; ;
+using RepositoryLayer.Context;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Service;
+using BusinessLayer.Interface;
+
 
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -23,6 +24,8 @@ try
     builder.Host.UseNLog();
     builder.Services.AddDbContext<GreetContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("MySqlDatabase"), new MySqlServerVersion(new Version(8, 0, 41))));
+    builder.Services.AddDbContext<UserContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("MySqlDatabase"), new MySqlServerVersion(new Version(8, 0, 41))));
 
     // Add services to the container.
     builder.Services.AddControllers();
@@ -30,7 +33,8 @@ try
     builder.Services.AddSwaggerGen();
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
-
+    builder.Services.AddScoped<IUserBL, UserBL>();
+    builder.Services.AddScoped<IUserRL, UserRL>();
 
     var app = builder.Build();
 
@@ -39,8 +43,7 @@ try
     {
         app.UseSwagger();
         app.UseSwaggerUI();
-        app.UseRequestLoggerMiddleware();
-        app.ConfigureExceptionMiddleware();
+        
 
 
     }

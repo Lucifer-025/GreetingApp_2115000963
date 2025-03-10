@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qRJXlVcuS28=",
+  "dgSpecHash": "SGZi2VBmXLg=",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore\\2.3.0\\microsoft.aspnetcore.2.3.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",

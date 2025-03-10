@@ -134,3 +134,4 @@ C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplicatio
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\bin\Debug\net6.0\Middleware.dll
 C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\bin\Debug\net6.0\Middleware.pdb
+C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\bin\Debug\net6.0\BCrypt.Net-Next.dll

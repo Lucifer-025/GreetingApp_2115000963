@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Bjn5wZd0jTY=",
+  "dgSpecHash": "b1cfu2S3N7E=",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Desktop\\CloneAppGreet\\GreetingApp_2115000963\\RepositoryLayer\\RepositoryLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.36\\microsoft.entityframeworkcore.6.0.36.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.36\\microsoft.entityframeworkcore.abstractions.6.0.36.nupkg.sha512",
