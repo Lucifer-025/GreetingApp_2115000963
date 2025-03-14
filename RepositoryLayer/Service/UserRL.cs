@@ -7,7 +7,6 @@ using System.Security.Cryptography;
 using System.Text;
 using RepositoryLayer.Context;
 using NLog;
-using RepositoryLayer.Migrations.User;
 
 namespace RepositoryLayer.Service
 {
@@ -34,19 +33,24 @@ namespace RepositoryLayer.Service
             return true;
         }
 
-        public string Login(string email, string password)
-        {
-            var user = context.Users.FirstOrDefault(u => u.Email == email);
 
-            if (user != null && VerifyPassword(password, user.Password))
+        public UserEntity GetUserByEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
             {
-                return "Login Successful"; // or generate a JWT token here
+                logger.Warn("GetUserByEmail called with null or empty email.");
+                return null;
             }
 
-            return null; // Indicate failure
+            var user = context.Users.AsNoTracking().FirstOrDefault(user => user.Email == email);
+
+            if (user == null)
+            {
+                logger.Warn("No user found with email: {0}", email);
+            }
+
+            return user;
         }
-
-
 
         public bool ForgetPassword(string email)
         {
@@ -71,13 +75,9 @@ namespace RepositoryLayer.Service
         }
         private string HashPassword(string password)
         {
-            byte[] salt = new byte[SaltSize];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-
-            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[SaltSize]);
+            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations))
             {
                 byte[] hash = pbkdf2.GetBytes(HashSize);
                 byte[] hashBytes = new byte[SaltSize + HashSize];
@@ -86,23 +86,5 @@ namespace RepositoryLayer.Service
                 return Convert.ToBase64String(hashBytes);
             }
         }
-        private bool VerifyPassword(string enteredPassword, string storedPassword)
-        {
-            byte[] hashBytes = Convert.FromBase64String(storedPassword);
-            byte[] salt = new byte[SaltSize];
-            Array.Copy(hashBytes, 0, salt, 0, SaltSize);
-
-            using (var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, Iterations, HashAlgorithmName.SHA256))
-            {
-                byte[] hash = pbkdf2.GetBytes(HashSize);
-                for (int i = 0; i < HashSize; i++)
-                {
-                    if (hashBytes[i + SaltSize] != hash[i])
-                        return false;
-                }
-            }
-            return true;
-        }
-
     }
 }

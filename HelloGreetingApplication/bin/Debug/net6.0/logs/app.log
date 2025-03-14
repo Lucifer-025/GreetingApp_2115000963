@@ -1874,3 +1874,1088 @@ LIMIT 1
 2025-03-11 00:16:39.2692|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 158.53ms
 2025-03-11 00:16:39.2692|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
 2025-03-11 00:16:39.2692|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 58 - 200 - application/json;+charset=utf-8 171.7498ms
+2025-03-11 13:02:45.8419|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 13:02:46.6523|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 13:02:46.6633|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Creating key {33bfcdf4-02cf-4a75-b842-2e71c5336fd6} with creation date 2025-03-11 07:32:46Z, activation date 2025-03-11 07:32:46Z, and expiration date 2025-06-09 07:32:46Z.
+2025-03-11 13:02:46.6904|INFO|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Writing data to file 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys\key-33bfcdf4-02cf-4a75-b842-2e71c5336fd6.xml'.
+2025-03-11 13:02:47.0903|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 13:02:47.0956|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 13:02:47.2487|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 13:02:47.2487|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 13:02:47.2487|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 13:03:02.3060|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 13:03:04.3865|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 2078.4127ms
+2025-03-11 13:03:04.5780|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 13:03:04.5780|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 13:03:04.5813|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 9.7775ms
+2025-03-11 13:03:04.6005|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 22.4461ms
+2025-03-11 13:03:04.7466|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 13:03:05.3719|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 625.0968ms
+2025-03-11 13:03:05.6635|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 13:03:05.6737|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.2557ms
+2025-03-11 13:03:57.6134|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Register application/json 110
+2025-03-11 13:03:57.8328|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-11 13:03:57.9335|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:03:58.6842|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:03:59.7774|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:04:00.4941|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (65ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__user_Email_0)
+2025-03-11 13:04:00.7544|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Users` (`Email`, `FirstName`, `LastName`, `Password`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2025-03-11 13:04:00.8075|INFO|HelloGreetingApplication.Controllers.UserController|User Registered: luck@gmail.com
+2025-03-11 13:04:00.8137|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:04:00.8137|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 2882.2695ms
+2025-03-11 13:04:00.8137|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-11 13:04:00.8303|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Register application/json 110 - 200 - application/json;+charset=utf-8 3214.7807ms
+2025-03-11 13:04:26.8903|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 57
+2025-03-11 13:04:26.9092|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:04:26.9481|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:04:26.9574|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:04:26.9711|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.comm
+2025-03-11 13:04:26.9893|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:04:27.1893|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:04:27.1893|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.comm
+2025-03-11 13:04:27.1893|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:04:27.2124|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 260.6726ms
+2025-03-11 13:04:27.2124|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:04:27.2124|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 57 - 401 - application/json;+charset=utf-8 323.4682ms
+2025-03-11 13:05:16.1350|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 13:05:16.1350|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:05:16.1350|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:05:16.1455|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:05:16.1455|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:05:16.2350|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:05:16.2350|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:05:16.2520|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 13:05:16.2520|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:05:16.2520|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 113.5892ms
+2025-03-11 13:05:16.2520|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:05:16.2520|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 118.5171ms
+2025-03-11 13:06:12.0162|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 13:06:12.0317|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:06:12.0317|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:06:12.0317|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:06:12.0317|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:06:12.0317|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:06:12.0475|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:06:12.0689|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 13:06:12.0689|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:06:12.0689|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 35.9137ms
+2025-03-11 13:06:12.0689|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:06:12.0689|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 56.0239ms
+2025-03-11 13:06:17.5109|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 13:06:17.5350|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 26.0231ms
+2025-03-11 13:06:17.5872|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 13:06:17.5872|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 13:06:17.5968|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 9.5588ms
+2025-03-11 13:06:17.5968|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 3.4566ms
+2025-03-11 13:06:17.5968|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 13:06:17.6948|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 97.3860ms
+2025-03-11 13:06:18.1786|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 13:06:18.1786|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6.0690ms
+2025-03-11 13:07:18.1878|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 97
+2025-03-11 13:07:18.2093|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:07:18.2093|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:07:18.2345|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:07:18.2666|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:07:18.2666|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:07:18.3219|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (41ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:07:18.3402|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 13:07:18.3402|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:07:18.3442|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 110.8805ms
+2025-03-11 13:07:18.3442|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:07:18.3442|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 97 - 401 - application/json;+charset=utf-8 153.4589ms
+2025-03-11 13:10:45.9863|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 13:10:46.0077|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:10:46.0077|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:10:46.0215|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:10:46.0215|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:10:46.0323|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:10:46.0323|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:10:46.0662|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 13:10:46.0662|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:10:46.0662|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 47.7439ms
+2025-03-11 13:10:46.0662|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:10:46.0662|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 81.4712ms
+2025-03-11 13:19:05.0855|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 13:19:05.8518|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 13:19:06.1928|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 13:19:06.1928|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 13:19:06.3491|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 13:19:06.3491|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 13:19:06.3491|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 13:19:09.0608|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 13:19:10.1037|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1066.4996ms
+2025-03-11 13:19:10.2047|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 13:19:10.2047|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 13:19:10.2212|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 13:19:10.2872|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 69.5144ms
+2025-03-11 13:19:10.3913|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 174.1880ms
+2025-03-11 13:19:10.5177|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 287.0801ms
+2025-03-11 13:19:10.6996|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 13:19:10.7284|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 28.6645ms
+2025-03-11 13:19:43.8109|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 13:19:43.8814|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:19:44.0321|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:19:45.0916|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:19:45.2845|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:19:46.7772|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:19:47.1610|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed.|System.InvalidOperationException: The LINQ expression 'DbSet<UserEntity>()
+    .Where(u => u.Email.Equals(
+        value: __email_0, 
+        comparisonType: OrdinalIgnoreCase))' could not be translated. Additional information: Translation of the 'String.Equals' overload with a 'StringComparison' parameter is not supported by default. To opt-in to translations of methods with a 'StringComparison' parameter, call `EnableStringComparisonTranslations` on your MySQL specific 'DbContext' options. For general EF Core information about this error, see https://go.microsoft.com/fwlink/?linkid=2129535 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass9_0`1.<Execute>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at UserRL.GetUserByEmail(String email) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\RepositoryLayer\Service\UserRL.cs:line 32
+   at BusinessLayer.Service.UserBL.GetUserByEmail(String email) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\BusinessLayer\Service\UserBL.cs:line 39
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 82
+2025-03-11 13:19:47.2136|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:19:47.2297|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 3186.5574ms
+2025-03-11 13:19:47.2297|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:19:47.2370|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 400 - application/json;+charset=utf-8 3432.5696ms
+2025-03-11 13:21:01.7575|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 13:21:02.4001|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 13:21:02.6640|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 13:21:02.6640|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 13:21:02.8793|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 13:21:02.8793|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 13:21:02.8793|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 13:21:05.4235|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 13:21:06.4269|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1032.3327ms
+2025-03-11 13:21:06.5295|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 13:21:06.5295|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 13:21:06.5295|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 13:21:06.5315|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 13.5032ms
+2025-03-11 13:21:06.5568|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 27.2808ms
+2025-03-11 13:21:06.6631|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 133.5415ms
+2025-03-11 13:21:06.8198|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 13:21:06.8315|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.6778ms
+2025-03-11 13:21:57.4562|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 13:21:57.5266|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:21:57.6737|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 13:21:58.3729|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 13:21:58.4222|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 13:21:58.9627|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 13:21:59.7027|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (64ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 13:21:59.7886|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 13:21:59.7991|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 13:21:59.7991|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2124.8107ms
+2025-03-11 13:21:59.7991|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 13:21:59.8144|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 2365.4371ms
+2025-03-11 14:20:24.6209|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 14:20:25.9730|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 14:20:26.6573|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 14:20:26.6573|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 14:20:26.9247|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 14:20:27.0811|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 14:20:27.0811|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 14:20:29.1190|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 14:20:30.1875|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1088.9410ms
+2025-03-11 14:20:30.2804|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 14:20:30.2804|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 14:20:30.2817|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.3364ms
+2025-03-11 14:20:30.2817|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 14:20:30.2973|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 16.8737ms
+2025-03-11 14:20:30.4092|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 122.2367ms
+2025-03-11 14:20:30.5576|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 14:20:30.5753|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.6407ms
+2025-03-11 14:21:53.3309|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 14:21:53.3773|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:21:53.5512|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 14:21:54.1635|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 14:21:54.2541|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-11 14:21:55.0567|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 14:21:56.0484|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (85ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 14:21:56.1765|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-11 14:21:56.1765|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 14:21:56.2006|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2634.1448ms
+2025-03-11 14:21:56.2006|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:21:56.2074|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 2884.0900ms
+2025-03-11 14:22:56.1428|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 14:22:56.1592|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:22:56.1592|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 14:22:56.1741|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 14:22:56.1741|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: greet@gmail.com
+2025-03-11 14:22:56.2080|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 14:22:56.2820|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 14:22:56.2986|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: greet@gmail.com
+2025-03-11 14:22:56.2986|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 14:22:56.2986|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 131.177ms
+2025-03-11 14:22:56.2986|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:22:56.2986|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 163.8787ms
+2025-03-11 14:43:43.1376|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 14:43:44.5863|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 14:43:45.1576|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 14:43:45.1576|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 14:43:45.4403|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 14:43:45.4403|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 14:43:45.4403|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 14:43:46.7843|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 14:43:48.1602|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1383.6248ms
+2025-03-11 14:43:48.2397|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 14:43:48.2397|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 14:43:48.2397|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 14:43:48.2514|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 11.5722ms
+2025-03-11 14:43:48.2514|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 21.0897ms
+2025-03-11 14:43:48.3594|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 119.2518ms
+2025-03-11 14:43:48.4654|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 14:43:48.4817|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 16.2512ms
+2025-03-11 14:44:19.3618|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 56
+2025-03-11 14:44:19.5032|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:44:19.6529|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 14:44:20.1193|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 14:44:20.2053|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: greet@gmail.com
+2025-03-11 14:44:21.0914|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 14:44:22.1677|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (89ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 14:44:22.3191|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: greet@gmail.com
+2025-03-11 14:44:22.3191|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 14:44:22.3418|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2676.6417ms
+2025-03-11 14:44:22.3418|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:44:22.3612|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 56 - 401 - application/json;+charset=utf-8 2989.0766ms
+2025-03-11 14:52:45.7133|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-11 14:52:47.0047|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-11 14:52:47.4502|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-11 14:52:47.4502|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-11 14:52:48.5448|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-11 14:52:49.1394|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-11 14:52:49.1600|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-11 14:52:49.5837|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-11 14:52:50.4741|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 899.5918ms
+2025-03-11 14:52:50.5527|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-11 14:52:50.5527|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-11 14:52:50.5527|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-11 14:52:50.5527|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.7837ms
+2025-03-11 14:52:50.5680|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 15.3083ms
+2025-03-11 14:52:50.6632|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 110.4281ms
+2025-03-11 14:52:50.7768|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-11 14:52:50.7943|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.3589ms
+2025-03-11 14:53:09.5493|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Register application/json 103
+2025-03-11 14:53:09.5818|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-11 14:53:09.6371|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 14:53:09.9529|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 14:53:10.8695|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 14:53:11.8907|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (92ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__user_Email_0)
+2025-03-11 14:53:12.5313|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Users` (`Email`, `FirstName`, `LastName`, `Password`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2025-03-11 14:53:12.6019|INFO|HelloGreetingApplication.Controllers.UserController|User Registered: bye@gmail.com
+2025-03-11 14:53:12.6103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 14:53:12.6103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 2976.4049ms
+2025-03-11 14:53:12.6103|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-11 14:53:12.6282|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Register application/json 103 - 200 - application/json;+charset=utf-8 3072.1749ms
+2025-03-11 14:53:35.6320|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-11 14:53:35.6598|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:53:35.6598|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-11 14:53:35.6748|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-11 14:53:35.6897|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: bye@gmail.com
+2025-03-11 14:53:35.6897|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-11 14:53:35.9770|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (41ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-11 14:53:36.5554|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed.|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 30
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 89
+2025-03-11 14:53:36.5864|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-11 14:53:36.5864|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 920.8795ms
+2025-03-11 14:53:36.5864|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-11 14:53:36.5864|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 400 - application/json;+charset=utf-8 957.8480ms
+2025-03-12 16:36:36.4090|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-12 16:36:37.4246|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-12 16:36:37.8541|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-12 16:36:37.8541|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-12 16:36:38.0154|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-12 16:36:38.0155|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-12 16:36:38.0155|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-12 16:36:46.3558|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-12 16:36:49.4945|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 3199.1118ms
+2025-03-12 16:36:49.6496|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-12 16:36:49.6496|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-12 16:36:49.6573|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui.css - -
+2025-03-12 16:36:49.6573|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.css - -
+2025-03-12 16:36:49.6573|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui-bundle.js - -
+2025-03-12 16:36:49.6573|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui-standalone-preset.js - -
+2025-03-12 16:36:49.6573|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-12 16:36:49.7431|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 99.4681ms
+2025-03-12 16:36:49.7507|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 101.0081ms
+2025-03-12 16:36:49.8058|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui.css was not modified
+2025-03-12 16:36:49.8145|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /index.css was not modified
+2025-03-12 16:36:49.8145|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui-bundle.js was not modified
+2025-03-12 16:36:49.8145|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui-standalone-preset.js was not modified
+2025-03-12 16:36:49.8998|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.css - - - 304 - text/css 245.4194ms
+2025-03-12 16:36:49.8998|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 246.5460ms
+2025-03-12 16:36:49.8998|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui.css - - - 304 - text/css 248.5313ms
+2025-03-12 16:36:49.9100|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 252.5410ms
+2025-03-12 16:36:50.3635|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 705.9855ms
+2025-03-12 16:36:50.9035|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-12 16:36:50.9158|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.3126ms
+2025-03-14 23:22:11.2608|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:22:13.4395|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:22:14.0309|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:22:14.0309|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:22:14.3327|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:22:14.3327|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:22:14.3327|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:22:17.7304|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:22:18.5448|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 823.2837ms
+2025-03-14 23:22:18.6358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:22:18.6358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.css - -
+2025-03-14 23:22:18.6358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui.css - -
+2025-03-14 23:22:18.6358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui-bundle.js - -
+2025-03-14 23:22:18.6358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/swagger-ui-standalone-preset.js - -
+2025-03-14 23:22:18.6490|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:22:18.6490|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 7.1743ms
+2025-03-14 23:22:18.6706|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 34.7872ms
+2025-03-14 23:22:18.6706|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui-standalone-preset.js was not modified
+2025-03-14 23:22:18.6706|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /index.css was not modified
+2025-03-14 23:22:18.6706|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui-bundle.js was not modified
+2025-03-14 23:22:18.6706|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /swagger-ui.css was not modified
+2025-03-14 23:22:18.6830|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 42.3184ms
+2025-03-14 23:22:18.6830|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.css - - - 304 - text/css 47.1504ms
+2025-03-14 23:22:18.6830|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 44.1549ms
+2025-03-14 23:22:18.6830|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/swagger-ui.css - - - 304 - text/css 47.0159ms
+2025-03-14 23:22:19.0241|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:22:19.2246|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 200.5610ms
+2025-03-14 23:22:19.5695|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:22:19.5705|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.8441ms
+2025-03-14 23:22:45.3908|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Register application/json 106
+2025-03-14 23:22:45.4031|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:22:45.4801|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:22:46.3608|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:22:47.4595|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:22:48.6145|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (106ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__user_Email_0)
+2025-03-14 23:22:48.6861|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ConflictObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:22:48.7073|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 3219.1188ms
+2025-03-14 23:22:48.7073|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:22:48.7142|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Register application/json 106 - 409 - application/json;+charset=utf-8 3330.2238ms
+2025-03-14 23:23:03.1862|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Register application/json 104
+2025-03-14 23:23:03.1862|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:23:03.1862|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:23:03.1945|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:23:03.2255|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:23:03.2782|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__user_Email_0)
+2025-03-14 23:23:03.5901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Users` (`Email`, `FirstName`, `LastName`, `Password`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2025-03-14 23:23:03.6806|INFO|HelloGreetingApplication.Controllers.UserController|User Registered: capg@gmail.com
+2025-03-14 23:23:03.6806|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:23:03.6806|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 488.4685ms
+2025-03-14 23:23:03.6806|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:23:03.6806|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Register application/json 104 - 200 - application/json;+charset=utf-8 496.1645ms
+2025-03-14 23:23:25.4014|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-14 23:23:25.4014|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:23:25.4014|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:23:25.4172|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:23:25.4298|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: capg@gmail.com
+2025-03-14 23:23:25.5009|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:23:25.5562|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:23:25.8584|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed.|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 89
+2025-03-14 23:23:25.9840|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:23:25.9840|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 577.9409ms
+2025-03-14 23:23:25.9840|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:23:25.9840|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 400 - application/json;+charset=utf-8 585.5627ms
+2025-03-14 23:33:56.7742|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:33:57.7905|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:33:58.2460|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:33:58.2460|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:33:58.4428|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:33:58.4428|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:33:58.4428|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:33:59.8882|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:34:00.9151|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1032.5017ms
+2025-03-14 23:34:01.0083|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:34:01.0083|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:34:01.0083|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:34:01.0083|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 6.6374ms
+2025-03-14 23:34:01.0234|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 15.1261ms
+2025-03-14 23:34:01.1135|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 105.2539ms
+2025-03-14 23:34:02.0161|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:34:02.0441|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 28.0112ms
+2025-03-14 23:34:41.5114|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-14 23:34:41.5582|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:34:41.5799|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:34:41.7161|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:34:42.6733|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:34:42.7436|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: capg@gmail.com
+2025-03-14 23:34:43.6216|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:34:44.6586|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (95ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:34:44.9686|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed.|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 89
+2025-03-14 23:34:44.9915|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:34:44.9915|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 3275.3145ms
+2025-03-14 23:34:44.9915|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:34:44.9915|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:34:45.0116|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 400 - application/json;+charset=utf-8 3502.7525ms
+2025-03-14 23:40:36.6159|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:40:38.0170|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:40:38.6155|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:40:38.6155|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:40:39.0676|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:40:39.1857|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:40:39.4525|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:40:40.1902|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:40:41.5019|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1320.7571ms
+2025-03-14 23:40:41.5927|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:40:41.5927|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:40:41.5927|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:40:41.6012|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 8.6387ms
+2025-03-14 23:40:41.6012|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 19.8535ms
+2025-03-14 23:40:41.7220|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 129.4314ms
+2025-03-14 23:40:41.8521|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:40:41.8521|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.4855ms
+2025-03-14 23:40:59.0621|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/HelloGreeting/GetAllGreetings - -
+2025-03-14 23:40:59.0865|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: GET /HelloGreeting/GetAllGreetings
+2025-03-14 23:40:59.0865|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication)'
+2025-03-14 23:40:59.1451|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetAllGreetings", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllGreetings() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-14 23:40:59.5272|INFO|HelloGreetingApplication.Controllers.HelloGreetingController|Logger Application has been started
+2025-03-14 23:41:00.3420|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'GreetContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:41:01.1792|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`Greeting`
+FROM `GreetMessages` AS `g`
+2025-03-14 23:41:01.2961|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.Collections.Generic.List`1[[ModelLayer.Model.GreetModel, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:41:01.3199|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication) in 2166.6541ms
+2025-03-14 23:41:01.3204|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication)'
+2025-03-14 23:41:01.3204|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 200
+2025-03-14 23:41:01.3377|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/HelloGreeting/GetAllGreetings - - - 200 - application/json;+charset=utf-8 2273.8853ms
+2025-03-14 23:41:54.7647|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-14 23:41:54.7938|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:41:54.7938|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:41:54.8125|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:41:54.8125|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:41:54.9220|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: capg@gmail.com
+2025-03-14 23:41:54.9451|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:41:55.4444|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (38ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:41:55.6045|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed.|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 89
+2025-03-14 23:41:55.6240|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:41:55.6240|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 815.1824ms
+2025-03-14 23:41:55.6240|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:41:55.6240|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:41:55.6240|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 400 - application/json;+charset=utf-8 864.3284ms
+2025-03-14 23:45:15.4537|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:45:16.7970|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:45:17.2833|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:45:17.2833|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:45:17.5095|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:45:17.5095|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:45:17.5095|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:45:18.6516|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:45:19.9725|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1359.7778ms
+2025-03-14 23:45:20.0843|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:45:20.0843|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:45:20.0843|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:45:20.0859|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.7003ms
+2025-03-14 23:45:20.1037|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 19.4485ms
+2025-03-14 23:45:20.2298|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 145.4403ms
+2025-03-14 23:45:20.3844|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:45:20.4003|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.9627ms
+2025-03-14 23:45:43.8746|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-14 23:45:43.9315|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:45:43.9315|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:45:44.0840|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:45:44.7331|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:45:44.8057|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: capg@gmail.com
+2025-03-14 23:45:45.6242|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:45:46.6078|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (95ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:45:46.8845|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: capg@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96
+2025-03-14 23:45:46.9009|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:45:46.9181|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2821.9289ms
+2025-03-14 23:45:46.9181|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:45:46.9181|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:45:46.9317|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 400 - application/json;+charset=utf-8 3053.7036ms
+2025-03-14 23:47:06.8647|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 97
+2025-03-14 23:47:06.8880|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:47:06.8880|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:47:06.8880|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:47:06.9013|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:47:06.9013|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: luck@gmail.com
+2025-03-14 23:47:06.9649|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:47:07.0258|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:47:07.0395|WARN|HelloGreetingApplication.Controllers.UserController|Invalid login attempt for user: luck@gmail.com
+2025-03-14 23:47:07.0395|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:47:07.0395|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 147.748ms
+2025-03-14 23:47:07.0395|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:47:07.0395|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 401
+2025-03-14 23:47:07.0395|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 97 - 401 - application/json;+charset=utf-8 181.8355ms
+2025-03-14 23:48:09.7997|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Register application/json 101
+2025-03-14 23:48:09.8061|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Register
+2025-03-14 23:48:09.8061|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:48:09.8061|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:48:09.8061|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:48:09.8943|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:48:09.9172|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__user_Email_0)
+2025-03-14 23:48:10.1170|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Users` (`Email`, `FirstName`, `LastName`, `Password`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `UserId`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `UserId` = LAST_INSERT_ID();
+2025-03-14 23:48:10.1887|INFO|HelloGreetingApplication.Controllers.UserController|User Registered: user3@gmail.com
+2025-03-14 23:48:10.1887|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:48:10.1887|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication) in 382.0856ms
+2025-03-14 23:48:10.1887|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)'
+2025-03-14 23:48:10.1887|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 200
+2025-03-14 23:48:10.1948|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Register application/json 101 - 200 - application/json;+charset=utf-8 392.8059ms
+2025-03-14 23:48:33.5206|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-14 23:48:33.5311|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:48:33.5311|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:48:33.5311|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:48:33.5410|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:48:33.5410|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-14 23:48:33.5410|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:48:33.5561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:48:33.6740|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96
+2025-03-14 23:48:33.6740|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:48:33.6797|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 135.9889ms
+2025-03-14 23:48:33.6797|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:48:33.6797|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:48:33.6797|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 400 - application/json;+charset=utf-8 161.0220ms
+2025-03-14 23:50:12.1251|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:50:13.2913|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:50:13.7454|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:50:13.7454|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:50:13.9902|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:50:13.9902|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:50:13.9902|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:50:15.1348|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:50:16.2461|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1134.4176ms
+2025-03-14 23:50:16.4629|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:50:16.4629|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:50:16.4629|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:50:16.4629|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 8.3420ms
+2025-03-14 23:50:16.4805|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 17.6496ms
+2025-03-14 23:50:16.5935|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 130.5736ms
+2025-03-14 23:50:16.7254|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:50:16.7324|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.|Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.PrepareGenerateOperation(IGrouping`2 group)
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-03-14 23:50:16.7454|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 20.0788ms
+2025-03-14 23:51:01.0534|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:51:02.1811|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:51:02.6135|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:51:02.6135|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:51:03.4267|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:51:03.4549|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:51:03.4549|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:51:03.9730|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:51:05.0706|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1111.5570ms
+2025-03-14 23:51:05.1533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:51:05.1533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:51:05.1533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:51:05.1533|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.4840ms
+2025-03-14 23:51:05.1688|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 15.4586ms
+2025-03-14 23:51:05.2663|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 112.7116ms
+2025-03-14 23:51:05.3871|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:51:05.4017|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.5103ms
+2025-03-14 23:53:11.2069|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:53:12.3749|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:53:12.8325|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:53:12.8325|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:53:13.1392|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:53:13.1392|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:53:13.1392|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:53:14.5321|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:53:15.5310|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1011.2438ms
+2025-03-14 23:53:15.6228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:53:15.6228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:53:15.6228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:53:15.6228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 8.2151ms
+2025-03-14 23:53:15.6465|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 23.8088ms
+2025-03-14 23:53:15.7761|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 152.9999ms
+2025-03-14 23:53:15.9145|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:53:15.9371|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.1439ms
+2025-03-14 23:53:50.2967|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-14 23:53:50.3592|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:53:50.3706|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:53:50.5145|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:53:51.3669|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:53:51.4523|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-14 23:53:52.2253|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:53:53.1928|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (108ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:53:53.4864|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com. Error:    at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96
+2025-03-14 23:53:53.4953|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:53:53.5138|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2985.7472ms
+2025-03-14 23:53:53.5138|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:53:53.5138|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:53:53.5316|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 400 - application/json;+charset=utf-8 3234.9557ms
+2025-03-14 23:56:51.5608|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:56:52.7722|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:56:53.1815|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:56:53.1815|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:56:53.9264|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:56:53.9264|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:56:53.9647|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:56:54.2206|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:56:55.3840|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1178.3403ms
+2025-03-14 23:56:55.4955|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:56:55.4955|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:56:55.4955|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:56:55.4955|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 7.1675ms
+2025-03-14 23:56:55.5146|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 19.0696ms
+2025-03-14 23:56:55.6441|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 148.6317ms
+2025-03-14 23:56:55.7921|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:56:55.8085|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 16.5274ms
+2025-03-14 23:57:34.3237|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-14 23:57:34.3531|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-14 23:57:34.3680|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:57:34.4107|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-14 23:57:34.6936|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-14 23:57:34.7639|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-14 23:57:35.4814|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-14 23:57:36.4260|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (87ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-14 23:57:36.6367|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com. Error:    at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 96
+2025-03-14 23:57:36.6367|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-14 23:57:36.6596|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2240.5869ms
+2025-03-14 23:57:36.6596|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-14 23:57:36.6596|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-14 23:57:36.6672|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 400 - application/json;+charset=utf-8 2343.7182ms
+2025-03-14 23:58:46.7953|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-14 23:58:47.9899|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-14 23:58:48.4309|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-14 23:58:48.4309|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-14 23:58:48.6650|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-14 23:58:48.6650|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-14 23:58:48.6650|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-14 23:58:49.9835|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-14 23:58:50.8685|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 910.4039ms
+2025-03-14 23:58:50.9851|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-14 23:58:50.9851|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-14 23:58:50.9851|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-14 23:58:50.9851|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.2742ms
+2025-03-14 23:58:51.0031|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 17.9354ms
+2025-03-14 23:58:51.1086|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 123.4540ms
+2025-03-14 23:58:51.2324|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-14 23:58:51.2434|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.9669ms
+2025-03-15 00:01:45.4651|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-15 00:01:45.5119|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:01:45.5119|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:01:45.5849|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:01:46.4789|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:01:46.5741|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:01:46.5741|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmaail.com
+2025-03-15 00:01:47.3658|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:01:48.2989|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (86ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:01:48.3450|WARN|RepositoryLayer.Service.UserRL|No user found with email: user3@gmaail.com
+2025-03-15 00:01:48.3450|WARN|HelloGreetingApplication.Controllers.UserController|No user found with email: user3@gmaail.com
+2025-03-15 00:01:48.3513|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:01:48.3713|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2776.2691ms
+2025-03-15 00:01:48.3713|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:01:48.3713|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 401
+2025-03-15 00:01:48.3861|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 401 - application/json;+charset=utf-8 2920.9998ms
+2025-03-15 00:02:02.9495|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:02:02.9495|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:02:02.9495|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:02:02.9495|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:02:02.9495|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:02:02.9611|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:02:02.9611|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:02:02.9611|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:02:03.0047|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:02:03.1228|INFO|HelloGreetingApplication.Controllers.UserController|User found: Email = user3@gmail.com, PasswordHash = Qlv0ej86o+rTOGKlzbcEu6AZPM67D4mSNOLuvzDoLERZS57y
+2025-03-15 00:02:03.3306|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 117
+2025-03-15 00:02:03.4897|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:02:03.4931|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 535.1178ms
+2025-03-15 00:02:03.4931|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:02:03.4931|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 400
+2025-03-15 00:02:03.4931|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 400 - application/json;+charset=utf-8 543.4308ms
+2025-03-15 00:10:21.6848|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-15 00:10:22.5655|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 00:10:22.9490|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-15 00:10:22.9490|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-15 00:10:23.1611|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-15 00:10:23.1611|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-15 00:10:23.1611|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-15 00:10:25.0724|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-15 00:10:26.3021|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1240.1233ms
+2025-03-15 00:10:26.4494|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 00:10:26.4494|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-15 00:10:26.4494|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-15 00:10:26.5323|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 82.6730ms
+2025-03-15 00:10:26.5605|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 111.1140ms
+2025-03-15 00:10:27.2242|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 771.9516ms
+2025-03-15 00:10:27.5131|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-15 00:10:27.5339|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 20.7851ms
+2025-03-15 00:10:52.1180|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:10:52.1850|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:10:52.2070|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:10:52.3704|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:10:52.8463|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:10:52.8463|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:10:52.9162|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:10:52.9162|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:10:53.5673|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:10:54.8754|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (62ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:10:55.0032|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 103
+2025-03-15 00:10:55.0296|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:10:55.0434|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2659.0698ms
+2025-03-15 00:10:55.0434|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:10:55.0434|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 500
+2025-03-15 00:10:55.0434|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 500 - application/json;+charset=utf-8 2935.6742ms
+2025-03-15 00:12:38.6863|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-15 00:12:39.5503|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 00:12:39.8775|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-15 00:12:39.8775|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-15 00:12:40.0894|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-15 00:12:40.0894|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-15 00:12:40.0894|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-15 00:12:43.9149|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-15 00:12:44.5228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 611.7462ms
+2025-03-15 00:12:44.6231|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 00:12:44.6231|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-15 00:12:44.6231|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-15 00:12:44.6330|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 9.7955ms
+2025-03-15 00:12:44.6554|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 32.0533ms
+2025-03-15 00:12:44.8114|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 188.2467ms
+2025-03-15 00:12:44.9662|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-15 00:12:44.9831|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.2263ms
+2025-03-15 00:13:08.7741|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:13:08.7946|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:13:08.8082|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:13:08.8483|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:13:09.1659|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:13:09.1659|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:13:09.2485|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:13:09.2485|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:13:09.8805|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:13:10.6086|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (65ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:13:10.7465|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 103
+2025-03-15 00:13:10.7667|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:13:10.7816|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 1927.6231ms
+2025-03-15 00:13:10.7816|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:13:10.7816|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 500
+2025-03-15 00:13:10.7943|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 500 - application/json;+charset=utf-8 2018.0933ms
+2025-03-15 00:14:34.2395|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-15 00:14:35.1666|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 00:14:35.5590|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-15 00:14:35.5590|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-15 00:14:35.7272|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-15 00:14:35.7272|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-15 00:14:35.7272|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-15 00:14:37.6623|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-15 00:14:39.1696|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1522.4189ms
+2025-03-15 00:14:39.2799|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-15 00:14:39.2799|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 00:14:39.2799|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-15 00:14:39.2943|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 22.9228ms
+2025-03-15 00:14:39.3265|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 46.5410ms
+2025-03-15 00:14:39.5111|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 231.1005ms
+2025-03-15 00:14:39.7020|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-15 00:14:39.7151|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.2764ms
+2025-03-15 00:15:02.4311|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:15:02.4958|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:15:02.5148|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:15:02.6629|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:15:03.3113|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:15:03.3113|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:15:03.5251|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:15:03.5251|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:15:04.7997|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:15:05.5029|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (63ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:15:05.5413|INFO|BusinessLayer.Service.UserBL|Starting password verification.
+2025-03-15 00:15:05.5413|INFO|BusinessLayer.Service.UserBL|Entered Password: user
+2025-03-15 00:15:05.5413|INFO|BusinessLayer.Service.UserBL|Stored Password (Base64): Qlv0ej86o+rTOGKlzbcEu6AZPM67D4mSNOLuvzDoLERZS57y
+2025-03-15 00:15:05.5413|INFO|BusinessLayer.Service.UserBL|HashBytes length: 36
+2025-03-15 00:15:05.5413|INFO|BusinessLayer.Service.UserBL|Password verified successfully.
+2025-03-15 00:15:05.6106|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 103
+2025-03-15 00:15:05.6172|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:15:05.6172|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2957.4697ms
+2025-03-15 00:15:05.6172|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:15:05.6172|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 500
+2025-03-15 00:15:05.6357|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 500 - application/json;+charset=utf-8 3210.8635ms
+2025-03-15 00:16:19.1106|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-15 00:16:19.8363|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 00:16:20.1407|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-15 00:16:20.1407|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-15 00:16:20.4340|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-15 00:16:20.6815|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-15 00:16:21.0831|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-15 00:16:22.6181|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-15 00:16:23.7626|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1152.9370ms
+2025-03-15 00:16:23.9000|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 00:16:23.9000|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-15 00:16:23.9000|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-15 00:16:23.9160|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 16.3424ms
+2025-03-15 00:16:23.9548|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 55.0811ms
+2025-03-15 00:16:24.1709|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 271.3110ms
+2025-03-15 00:16:24.3882|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-15 00:16:24.4198|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 30.3361ms
+2025-03-15 00:16:47.6200|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:16:47.6973|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:16:47.7120|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:16:47.8058|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:16:48.4114|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:16:48.4142|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:16:48.4788|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:16:48.4788|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:16:49.0115|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:16:49.7157|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (64ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:16:49.7578|INFO|BusinessLayer.Service.UserBL|Starting password verification.
+2025-03-15 00:16:49.7578|INFO|BusinessLayer.Service.UserBL|Entered Password: user
+2025-03-15 00:16:49.7578|INFO|BusinessLayer.Service.UserBL|Stored Password (Base64): Qlv0ej86o+rTOGKlzbcEu6AZPM67D4mSNOLuvzDoLERZS57y
+2025-03-15 00:16:49.7578|INFO|BusinessLayer.Service.UserBL|HashBytes length: 36
+2025-03-15 00:16:49.7578|INFO|BusinessLayer.Service.UserBL|Password verified successfully.
+2025-03-15 00:16:49.8580|ERROR|HelloGreetingApplication.Controllers.UserController|Login failed for user: user3@gmail.com|System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at HelloGreetingApplication.Helper.JwtTokenHelper.GenerateToken(UserEntity user) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Helper\JwtTokenHelper.cs:line 31
+   at HelloGreetingApplication.Controllers.UserController.Login(LoginUser loginModel) in C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\Controllers\UserController.cs:line 103
+2025-03-15 00:16:49.8715|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:16:49.8853|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2073.2551ms
+2025-03-15 00:16:49.8853|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:16:49.8853|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 500
+2025-03-15 00:16:49.8853|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 500 - application/json;+charset=utf-8 2277.5728ms
+2025-03-15 00:35:05.9335|INFO|HelloGreetingApplication.Program|Initializing application...
+2025-03-15 00:35:06.8033|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 00:35:07.1001|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7061
+2025-03-15 00:35:07.1001|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5054
+2025-03-15 00:35:07.2403|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-03-15 00:35:07.2403|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-03-15 00:35:07.2403|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\pc\Desktop\CloneAppGreet\GreetingApp_2115000963\HelloGreetingApplication\
+2025-03-15 00:35:09.8594|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.html - -
+2025-03-15 00:35:11.1234|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.html - - - 200 - text/html;charset=utf-8 1275.1410ms
+2025-03-15 00:35:11.2400|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_vs/browserLink - -
+2025-03-15 00:35:11.2400|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 00:35:11.2400|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/index.js - -
+2025-03-15 00:35:11.2453|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/index.js - - - 200 - application/javascript;charset=utf-8 5.2430ms
+2025-03-15 00:35:11.2604|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 20.3580ms
+2025-03-15 00:35:11.4013|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 161.1978ms
+2025-03-15 00:35:11.5613|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - -
+2025-03-15 00:35:11.5723|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7061/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.9257ms
+2025-03-15 00:35:47.7108|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 54
+2025-03-15 00:35:47.7800|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:35:47.7984|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:35:47.9518|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:35:48.8706|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:35:48.8706|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:35:49.0105|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:35:49.0105|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: user3@gmail.com
+2025-03-15 00:35:49.5584|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:35:50.3268|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (62ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:35:50.3673|INFO|BusinessLayer.Service.UserBL|Starting password verification.
+2025-03-15 00:35:50.3673|INFO|BusinessLayer.Service.UserBL|Entered Password: user
+2025-03-15 00:35:50.3673|INFO|BusinessLayer.Service.UserBL|Stored Password (Base64): Qlv0ej86o+rTOGKlzbcEu6AZPM67D4mSNOLuvzDoLERZS57y
+2025-03-15 00:35:50.3673|INFO|BusinessLayer.Service.UserBL|HashBytes length: 36
+2025-03-15 00:35:50.3673|INFO|BusinessLayer.Service.UserBL|Password verified successfully.
+2025-03-15 00:35:50.5949|INFO|HelloGreetingApplication.Controllers.UserController|User user3@gmail.com logged in successfully.
+2025-03-15 00:35:50.6011|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:35:50.6011|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 2647.6966ms
+2025-03-15 00:35:50.6011|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:35:50.6011|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 200
+2025-03-15 00:35:50.6228|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 54 - 200 - application/json;+charset=utf-8 2908.1488ms
+2025-03-15 00:36:41.5737|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7061/User/Login application/json 55
+2025-03-15 00:36:41.6041|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Request: POST /User/Login
+2025-03-15 00:36:41.6041|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:36:41.6041|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginUser) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication).
+2025-03-15 00:36:41.6041|INFO|BusinessLayer.Service.UserBL|UserBL initialized.
+2025-03-15 00:36:41.6041|INFO|HelloGreetingApplication.Controllers.UserController|User Controller initialized successfully
+2025-03-15 00:36:41.6178|INFO|HelloGreetingApplication.Controllers.UserController|Login method called.
+2025-03-15 00:36:41.6178|INFO|HelloGreetingApplication.Controllers.UserController|Login attempt for user: capg@gmail.com
+2025-03-15 00:36:41.6569|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-15 00:36:41.7272|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`UserId`, `u`.`Email`, `u`.`FirstName`, `u`.`LastName`, `u`.`Password`
+FROM `Users` AS `u`
+WHERE `u`.`Email` = @__email_0
+LIMIT 1
+2025-03-15 00:36:41.7272|INFO|BusinessLayer.Service.UserBL|Starting password verification.
+2025-03-15 00:36:41.7272|INFO|BusinessLayer.Service.UserBL|Entered Password: string
+2025-03-15 00:36:41.7272|INFO|BusinessLayer.Service.UserBL|Stored Password (Base64): NxRgpW/k+jB4fHRDyAEZ/WtJEcnbn6qxvqSPgwG6MVHvWkVM
+2025-03-15 00:36:41.7272|INFO|BusinessLayer.Service.UserBL|HashBytes length: 36
+2025-03-15 00:36:41.7272|INFO|BusinessLayer.Service.UserBL|Password verified successfully.
+2025-03-15 00:36:41.7272|INFO|HelloGreetingApplication.Controllers.UserController|User capg@gmail.com logged in successfully.
+2025-03-15 00:36:41.7416|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-15 00:36:41.7416|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 133.7618ms
+2025-03-15 00:36:41.7416|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)'
+2025-03-15 00:36:41.7416|INFO|Middleware.ExceptionMiddleware.RequestLoggerMiddleware|Response: 200
+2025-03-15 00:36:41.7416|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7061/User/Login application/json 55 - 200 - application/json;+charset=utf-8 165.1752ms

@@ -1,5 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
-using BuisnessLayer.Interface;
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.Service;
 using ModelLayer.Model;
